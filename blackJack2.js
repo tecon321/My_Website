@@ -263,7 +263,7 @@ function startGame()
             okay = true;
         }
         else{
-            alert("Not enough money in account");
+            //alert("Not enough money in account");
             userInput = -1;
         }
     }
@@ -283,10 +283,10 @@ function startGame()
         //display balance
 
         var userInput = parseInt(appData.pBet.value);
-        if(userInput > account_balance)
-        {
+//         if(userInput > account_balance)
+//         {
 
-        }
+//         }
         var ml = appData.money.value;
         document.getElementById('moneyLeft').innerHTML = "Money left: " + ml;
 
