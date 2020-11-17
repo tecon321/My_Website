@@ -117,9 +117,9 @@
             <div class="card mt-3" id="interest1" style="width: 12rem;">
                 <img class="card-img-top" src="./sports.jpg" alt="sports picture" height="120px" width="120px">
                 <div class="card-body">
-                    <button type="button" id="plus1" onclick="expand1()">+</button>
                     <p class="card-title">Sports</p>
                     <p class="card-text">I playing like sports for competition and staying active. I also love watching sports!</p>
+                    <button type="button" class="btn btn-info" id="plus1" onclick="expand1()">More Info</button>
 
                 </div>
             </div>
@@ -150,9 +150,9 @@
 
         <script>
             function expand1(){
-                var tab = $('<div class="card" id="exp1"> <img class="card-img-top" src="./sports.jpg" height="120px" width="120px" > <div class="card-body"> <p class="card-title">More About Sports </div>');
+                var tab = $('<div class="card" id="exp1"> <img class="card-img-top" src="./sports.jpg" height="120px" width="120px" > <div class="card-body"> <p class="card-title">Sports I played</p> <ul type="disc"><li>Football</li><li>Basketball</li><li>Track and Field</li><ul><li>High Jump</li><li>400 Meter Dash</li></ul> </div>');
                 tab.appendTo(interest1);
-                document.getElementById('plus1').innerHTML = "-";
+                document.getElementById('plus1').innerHTML = "Less Info";
                 document.getElementById('plus1').setAttribute('onclick','deleteCard1()');
             }
             function addCard(id){
@@ -164,7 +164,7 @@
                 //document.getElementById(id).remove()
                 var element = document.getElementById("exp1");
                 element.parentNode.removeChild(element);
-                document.getElementById('plus1').innerHTML = "+";
+                document.getElementById('plus1').innerHTML = "More Info";
                 document.getElementById('plus1').setAttribute('onclick','expand1()');
             }
         </script>
