@@ -98,7 +98,7 @@
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td>Tik Tak Toe</td>
+                        <td>Tik-Tac-Toe</td>
                         <td>Javascript, HTML</td>
                     </tr>
                 </tbody>
@@ -127,21 +127,20 @@
             <div class="card mt-3" id="interest2" style="width: 12rem;">
                 <img class="card-img-top" src="./duolingo.jpg" alt="languages picture" height="120px" width="120px">
                 <div class="card-body">
-                    <button type="button" onclick="addCard(interest2)">+</button>
                     <p class="card-title">Foreign languages</p>
                     <p class="card-text">I like learning foreign languages because I want to travel the world and experience other cultures!</p>
-
+                    <button type="button" class="btn btn-info" id="plus2" onclick="expand2()">More Info</button>
 
                 </div>
             </div>
 
             <div class="card mt-3" id="interest3" style="width: 12rem;">
-                <img class="card-img-top" src="./videogames.jpg" alt="videogames picture" height="120px" width="120px">
+                <img class="card-img-top" src="./videogames.jpg" alt="cooking picture" height="120px" width="120px">
                 <div class="card-body">
-                    <button type="button" onclick="addCard(interest3)">+</button>
-                    <p class="card-title">Video Games</p>
-                    <p class="card-text">I like video games because they are a fun way to pass free time and relax!</p>
-
+                    <p class="card-title">Cooking</p>
+                    <p class="card-text">I love creating delicious meals for my Friends and I want to open a restaurant one day!</p>
+                    <button type="button" class="btn btn-info" id="plus3" onclick="expand3()">More Info</button>
+                    
                 </div>
             </div>
         </div>
@@ -155,6 +154,18 @@
                 document.getElementById('plus1').innerHTML = "Less Info";
                 document.getElementById('plus1').setAttribute('onclick','deleteCard1()');
             }
+            function expand2(){
+                var tab = $('<div class="card" id="exp2"> <img class="card-img-top" src="./duolingo.jpg" height="120px" width="120px" > <div class="card-body"> <p class="card-title">Languages I am learning</p> <ul type="disc"><li>Italian</li><li>Spanish</li><li>French</li></ul> </div>');
+                tab.appendTo(interest2);
+                document.getElementById('plus2').innerHTML = "Less Info";
+                document.getElementById('plus2').setAttribute('onclick','deleteCard2()');
+            }
+            function expand3(){
+                var tab = $('<div class="card" id="exp3"> <img class="card-img-top" src="./duolingo.jpg" height="120px" width="120px" > <div class="card-body"> <p class="card-title"> My Favorite Recipes</p> <ul type="disc"><li>Garlic Butter Salmon</li><li>Fried Chicken Sandwich</li><li>Street Corn Tacos</li></ul> </div>');
+                tab.appendTo(interest3);
+                document.getElementById('plus3').innerHTML = "Less Info";
+                document.getElementById('plus3').setAttribute('onclick','deleteCard3()');
+            }
             function addCard(id){
                 var tweet = $('<div class="card" id="divIdToRemove"> <img class="card-img-top" src="./Twitter.png" height="120px" width="120px" > <div class="card-body"> <button type="button" onclick="deleteCard(divIdToRemove)">-</button> <p class="card-title">Tweet</p> Sample Tweet goes here </div>');
                 tweet.appendTo(id);
@@ -166,6 +177,20 @@
                 element.parentNode.removeChild(element);
                 document.getElementById('plus1').innerHTML = "More Info";
                 document.getElementById('plus1').setAttribute('onclick','expand1()');
+            }
+            function deleteCard2(){
+                //document.getElementById(id).remove()
+                var element = document.getElementById("exp2");
+                element.parentNode.removeChild(element);
+                document.getElementById('plus2').innerHTML = "More Info";
+                document.getElementById('plus2').setAttribute('onclick','expand2()');
+            }
+            function deleteCard3(){
+                //document.getElementById(id).remove()
+                var element = document.getElementById("exp3");
+                element.parentNode.removeChild(element);
+                document.getElementById('plus3').innerHTML = "More Info";
+                document.getElementById('plus3').setAttribute('onclick','expand3()');
             }
         </script>
 
