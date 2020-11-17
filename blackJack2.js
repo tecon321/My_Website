@@ -18,7 +18,7 @@ appData.canPlayTurn = false;
 appData.roundRunning = false;
 appData.gameRunning = false;
 
-var account_balance = 10;
+//var account_balance = 10;
 var display_name;
 var hands_won;
 var hands_lost;
@@ -258,12 +258,12 @@ function startGame()
     var userInput = parseInt(appData.money.value);
     var okay = false;
     while(!okay && userInput != -1){
-        if(userInput <= account_balance && userInput != -1)
+        if(userInput > 0) //userInput <= account_balance && 
         {
             okay = true;
         }
         else{
-            alert("Not enough money in account");
+            alert("Invalid Buy-in");
             userInput = -1;
         }
     }
