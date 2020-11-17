@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <title>About Me</title>
+        <style>
+            body {
+              background-image: url('./insideCasino.jpg');
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: 100% 100%;
+          }
+
+              .border-dotted{
+               border-style: dotted;
+              }
+              .border-10{
+              border-style:solid;
+               border-width: 10px;
+              }
+              .border-3 {
+                  border-style:inset !important;
+                  border-width:10px !important;
+              }
+              .center {
+                  text-align: center;
+                  margin: auto;
+                  width: 50%;
+                  padding: 10px;
+              }
+              .container2 {
+                  position: relative;
+                  width: 50%;
+                }
+
+                /* Make the image responsive */
+                .container2 img {
+                  width: 100%;
+                  height: auto;
+                }
+
+                /* Style the button and place it in the middle of the container/image */
+                .container .btn {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  -ms-transform: translate(-50%, -50%);
+                  background-color: Transparent;
+                  color: black;
+                  font-size: 16px;
+                  padding: 12px 24px;
+                  border: 1px solid black;
+                  cursor: pointer;
+                  border-radius: 5px;
+                }
+
+                .container .btn2 {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  -ms-transform: translate(-50%, -50%);
+                  background-color: Transparent;
+                  color: white;
+                  font-size: 16px;
+                  padding: 12px 24px;
+                  border: 1px solid white;
+                  cursor: pointer;
+                  border-radius: 5px;
+                }
+
+                .container .btn:hover {
+                  background-color: grey;
+                }
+
+                .container .btn2:hover {
+                  background-color: grey;
+                }
+
+}
+          </style>
+
+      </head>
+      <!--<main class="container">-->
+      <body class="border border-info border-3" >
+
+
+
+          <!-- A grey horizontal navbar that becomes vertical on small screens -->
+          <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./login.html">Sign Up page</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./tic-tac-toe.html">Tic-Tac-Toe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./blackjackHome.html">Blackjack</a>
+              </li>
+            </ul>
+
+          </nav>
+          <br>
+          <div class="container">
+              <div class="center">
+
+              <!-- use container class and header options -->
+
+               <center><h1 style="color:white">Welcome to BlackJack!</h1></center>
+
+
+
+
+             <br>
+             <div class="row">
+                 <div class="card mt-3" id="originalBJ" style="width: 17rem;">
+                     <p class="card-title">Play Ted's Original Blackjack</p>
+                     <div class="card-body">
+                         <div class="container">
+                              <img class="card-img-bottom" src="./og.PNG" height="180px" width="150px">
+                              <a class="btn" href="./blackJack.html">Play</a>
+                         </div>
+
+                         <p class="card-text">My Original Version of Single Player BlackJack</p>
+                     </div>
+                 </div>
+
+                 <div class="card mt-3" id="herokuBJ" style="width: 17rem;">
+                     <p class="card-title">Play Blackjack Heroku Version</p>
+                     <div class="card-body">
+                         <div class="container">
+                              <img class="card-img-bottom" src="./heroku.PNG" height="180px" width="150px">
+                              <a class="btn2" href="https://retriogames.herokuapp.com">Play</a>
+                         </div>
+
+                         <p class="card-text">Group Project BlackJack on Heroku</p>
+                     </div>
+                 </div>
+             </div>
+             <br>
+             <br>
+             <br>
+             <br>
+             </div>
+          </div>
+      </body>
+
+
+
+
+    </html>
