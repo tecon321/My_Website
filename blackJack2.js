@@ -275,7 +275,7 @@ function startGame()
 
 function endGame()
 {
-    alert("game over");
+    //alert("game over");
     appData.gameRunning = false;
     appData.pBet.value = "";
     appData.playerName.style.visibility = "visible";
