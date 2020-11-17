@@ -18,6 +18,13 @@ appData.canPlayTurn = false;
 appData.roundRunning = false;
 appData.gameRunning = false;
 
+//var account_balance = 10;
+var display_name;
+var hands_won;
+var hands_lost;
+var net_profit;
+
+
 function Card(v, suit, id, imgname)
 {
     this.title = v;
@@ -227,7 +234,7 @@ var writeBet = function()
     //check if input is an int using ASCII
 
     var userInput = parseInt(appData.pBet.value);
-    var ml = parseInt(appData.money.value)
+    var ml = parseInt(appData.money.value);
     if(userInput >= ml)
     {
         alert("All In");
@@ -247,29 +254,52 @@ function test()
 function startGame()
 {
 
-    appData.gameRunning = true;
+    //check for valid int
+    var userInput = parseInt(appData.money.value);
+    var okay = false;
+    while(!okay && userInput != -1){
+        if(userInput > 0 && userInput != -1)
+        {
+            okay = true;
+        }
+        else{
+            alert("Not enough money in account");
+            userInput = -1;
+        }
+    }
 
-    //chage play button to quit button
-    appData.startButton.innerHTML = "Quit Game";
-    appData.startButton.setAttribute('onclick', 'endGame()');
+    if(okay)
+    {
+        appData.gameRunning = true;
 
-    //hide player name and buyin inputs
-    appData.money.style.visibility = "hidden";
-    //appData.playerName.style.visibility = "hidden";
+        //chage play button to quit button
+        appData.startButton.innerHTML = "Quit Game";
+        appData.startButton.setAttribute('onclick', 'endGame()');
 
-    //display balance
-    var ml = appData.money.value;
-    document.getElementById('moneyLeft').innerHTML = "Money left: " + ml;
+        //hide player name and buyin inputs
+        appData.money.style.visibility = "hidden";
+        //appData.playerName.style.visibility = "hidden";
 
-    //add player
-    addPlayer();
-    //add dealer
-    addDealer();
+        //display balance
 
-    appData.allCards = initializeCards(); //initialize all cards in order
-    appData.deck = shuffle(); //create shuffled deck
+        var userInput = parseInt(appData.pBet.value);
+        if(userInput > account_balance)
+        {
 
-    runRound();
+        }
+        var ml = appData.money.value;
+        document.getElementById('moneyLeft').innerHTML = "Money left: " + ml;
+
+        //add player
+        addPlayer();
+        //add dealer
+        addDealer();
+
+        appData.allCards = initializeCards(); //initialize all cards in order
+        appData.deck = shuffle(); //create shuffled deck
+
+        runRound();
+    }
 
 }
 
@@ -278,7 +308,7 @@ function endGame()
     //alert("game over");
     appData.gameRunning = false;
     appData.pBet.value = "";
-    appData.playerName.style.visibility = "visible";
+    //appData.playerName.style.visibility = "visible";
     appData.money.style.visibility = "visible";
     appData.pBet.style.visibility = "hidden";
     appData.hitButton.style.visibility = "hidden";
@@ -428,7 +458,7 @@ var getCardSum = function(player)
 
 }
 
-function showHands(showDealer)
+var showHands = function(showDealer)
 {
     a = document.getElementById('pcard1');
     a.setAttribute("src", (appData.players[0].hand[0]).imgname);
@@ -446,27 +476,9 @@ function showHands(showDealer)
     }
 };
 
-var updatephand = function()
-{
-    document.getElementById('playerHand').innerHTML += "&nbsp;";
-
-    var img = document.createElement("img");
-
-    img.src = (appData.players[0].hand[appData.players[0].hand.length-1]).imgname;
-    img.width = "50";
-    img.height = "80";
-    var src = document.getElementById("playerHand");
-
-    src.appendChild(img);
-    showHands(false);
-    alert("appended");
-    return 1;
-}
-
 function hit()
 {
     //alert("hit");
-    var t = 0;
 
     //appData.doubleButton.disabled = true;
     document.getElementById('doubledown').disabled = true;
@@ -488,38 +500,18 @@ function hit()
     var sum = getCardSum(appData.players[0]);
     document.getElementById('ptotal').innerHTML = "Your Hand Total: " + sum;
 
-    //show updated hand
-    //showHands(false);
+
     //check for bust
-
-    // if(sum > 21)
-    // {
-    //     $('#status').html('loading...');
-    //     setTimeout(function() {
-    //         alert("busted");
-    //         appData.hitButton.style.visibility = "hidden";
-    //         appData.stayButton.style.visibility = "hidden";
-    //         appData.doubleButton.style.visibility = "hidden";
-    //             // lose();
-    //             //stay();
-    //         payOut();
-    //
-    //          $('#status').html('done');
-    //     }, 0);
-    // }
-
-
     if(sum > 21)
     {
-        alert("busted");
+        //alert("busted");
         appData.hitButton.style.visibility = "hidden";
         appData.stayButton.style.visibility = "hidden";
         appData.doubleButton.style.visibility = "hidden";
-            // lose();
-            //stay();
+        // lose();
+        //stay();
         payOut();
     }
-
 
 }
 
@@ -616,7 +608,7 @@ function turn()
     appData.doubleButton.style.visibility = "visible";
     document.getElementById('doubledown').disabled = false;
     document.getElementById('writebet').style.visibility = "hidden";
-    //alert("player turn");
+    alert("player turn");
 
     if(sum == 21)
     {
@@ -630,7 +622,7 @@ function turn()
 
 function dealerTurn()
 {
-    //alert("dealer turn");
+    alert("dealer turn");
     showHands(true);
     var dt = getCardSum(appData.players[appData.players.length-1]); //dealer total
     document.getElementById('dtotal').innerHTML = "Dealer Hand Total: " + dt;
