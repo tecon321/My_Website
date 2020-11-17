@@ -149,15 +149,23 @@
         <br>
 
         <script>
+            function expand1(){
+                var tab = $('<div class="card" id="exp1"> <img class="card-img-top" src="./Twitter.png" height="120px" width="120px" > <div class="card-body"> <button type="button" onclick="deleteCard(divIdToRemove)">-</button> <p class="card-title">More About Sports </div>');
+                tab.appendTo(interest1);
+                document.getElementById('plus1').innerHTML = "-";
+                document.getElementById('plus1').setAttribute('onclick','deleteCard1()');
+            }
             function addCard(id){
                 var tweet = $('<div class="card" id="divIdToRemove"> <img class="card-img-top" src="./Twitter.png" height="120px" width="120px" > <div class="card-body"> <button type="button" onclick="deleteCard(divIdToRemove)">-</button> <p class="card-title">Tweet</p> Sample Tweet goes here </div>');
                 tweet.appendTo(id);
             }
 
-            function deleteCard(id){
+            function deleteCard1(){
                 //document.getElementById(id).remove()
-                var element = document.getElementById("divIdToRemove");
+                var element = document.getElementById("interest1");
                 element.parentNode.removeChild(element);
+                document.getElementById('plus1').innerHTML = "+";
+                document.getElementById('plus1').setAttribute('onclick','expand1()');
             }
         </script>
 
