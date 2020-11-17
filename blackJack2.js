@@ -303,7 +303,7 @@ function endGame()
     //write new values to database (display?)
 
     //switch to game room screen
-    //window.location.href = 'https://w3docs.com';
+    window.location.href = './blackjackHome.html';
 
 
 }
