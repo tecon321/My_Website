@@ -44,7 +44,7 @@
                 <a class="nav-link" href="./blackjackHome.html">Blackjack</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./blackjackHome.html">NBA Model</a>
+                <a class="nav-link" href="./nba_model.html">NBA Model</a>
               </li>
             </ul>
 
@@ -61,7 +61,8 @@
         <!-- use card class -->
         <div class="card">
             <div class="card-body"><b>Overview: </b><p> During my Senior year I combined my love for Basketball and Data Science to build
-                a machine learning model to predict the winner of NBA basketball games. </p></div>
+                a machine learning model to predict the winner of NBA basketball games. I coded the project in Python
+                and used a number of Python packages including Pandas, NumPy, and Sklearn to store and model my data. </p></div>
 
             </div>
             <!-- <div class="card-body"><b>Bio: </b><p> Bachelor's in Science undergrad student at the University of Colorado at Boulder.</p></div> -->
@@ -69,46 +70,65 @@
             </div>
         <!-- </div> -->
         <br>
-        <div class="container">
-        <h2>Professional Pages</h2>
-        <!-- link to github -->
-        <a href="https://github.com/tecon321" class="btn btn-outline-secondary">GitHub</a>
-        <a href="https://www.linkedin.com/in/ted-c-522078b7" class="btn btn-outline-secondary">LinkedIn</a>
-        <a href="Resume_Ted_Conklin3.pdf" class="btn btn-outline-secondary">Resume</a>
-        <hr>
-        <!-- add image of me -->
-        <img src="./ted.jpg" class="rounded-circle" alt="Picture of Ted Conklin">
-        <br>
-        <br>
         <h3>My Projects</h3>
 
         <!-- bordered table -->
-        <!-- <table class="table table-bordered">
+        <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name of the project</th>
+                    <th scope="col">Phase</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Technologies Used</th>
+                    <th scope="col">Images</th>
                 </tr>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Blackjack</td>
-                        <td>HTML, Javascript, Node.js, Postgres</td>
+                        <th scope="row">Data Collection</th>
+                        <td>The data I used for this model was a vast collection of simple and advanced team
+                        statistics for all 30 NBA teams from 1990 to current day. I used the BeatifulSoup
+                        Python package to build by own web scraper that scraped all the statistics in efficient
+                        manner from sportsreference.com. The data was then stored in Pandas Data Frames and
+                        exported into local .csv files. </td>
+                        <td>Python, BeautifulSoup, Pandas, NumPy, HTML</td>
+                        <td><img src="Screenshot_stats.png"></td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Game of Thrones Game</td>
-                        <td>C++, Shell</td>
+                        <th scope="row">Data Cleaning</th>
+                        <td>After gathering my data into DataFrames, I had to clean my data into
+                        manipulatable formats for my model. This included changing the data types of
+                        various statistics, concatenating game results from monthly tables into
+                        full season tables, eliminating playoff games, etc. Then, I built my own functions to calculate
+                        certain statistics that weren't included in the original data. For example
+                        I converted game dates into date-time format and calculated the number of days rest each
+                        team had going into a game. </td>
+                        <td>Python, NumPy, Pandas, HTML</td>
+                        <td><img src="Screenshot_stats.png"></td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Tik-Tac-Toe</td>
-                        <td>Javascript, HTML</td>
+                        <th scope="row">Data Modeling</th>
+                        <td>Once all the data was collected, cleaned and reformatted, I built a stratified K-fold
+                        evaluator to partition my data into training and testing sets. For all my models, predictions were
+                        made on single games, where the model inputs were all team and opponent statistics for the two teams
+                        involved in the game during the season the game took place. The output for the prediction funcions
+                        for each model was binary: 1 if the home team is predicted to win, and 0 if the away team should win.
+                        I used the Sklearn decision tree classifier as a baseline weak learner, and the Random Forest ensamble.
+                        Additionally I built my own Bagging and AdaBoost ensamble methods.</td>
+                        <td>Python, NumPy, Sklearn, Pandas, AdaBoost, Bagging Ensable, stratified K-fold</td>
+                        <td><img src="Screenshot_data.png"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Results</th>
+                        <td>After running all four machine learning algoriths with various combinations of input features
+                        and numbers of K-fold partitions, the resulting predictions were shockingly accurate. The best
+                        performing model was the Random Forest ensamble, correctly predicting the winner of every game since 
+                        1990 with a mean accuracy of 69.3216% over a 4-fold partition. My bagging ensamble also performed well
+                        with a mean accuracy of 69.2%. </td>
+                        <td>Python, NumPy, Sklearn, Pandas, AdaBoost, Bagging Ensable, stratified K-fold</td>
+                        <td><img src="Screenshot_graph.png"></td>
                     </tr>
                 </tbody>
             </thead>
-        </table> -->
+        </table>
         <hr>
 
         <div class="row">
