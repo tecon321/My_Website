@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <title>About Me</title>
+        <style>
+              .border-dotted{
+               border-style: dotted;
+              }
+              .border-10{
+              border-style:solid;
+               border-width: 10px;
+              }
+              .border-3 {
+                  border-style:inset !important;
+                  border-width:10px !important;
+              }
+          </style>
+
+      </head>
+      <!--<main class="container">-->
+      <body class="border border-info border-3" >
+
+
+
+          <!-- A grey horizontal navbar that becomes vertical on small screens -->
+          <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./tic-tac-toe.html">Tic-Tac-Toe</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./blackjackHome.html">Blackjack</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="nba_model.html">NBA Model</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="hdn.html">HDN Analysis</a>
+                </li>
+            </ul>
+
+          </nav>
+          <br>
+         <div class="container">
+
+         <!-- use container class and header options -->
+         <div class="row">
+             <h1>Ted Conklin - </h1>
+             <h1 style="color: grey">NBA Prediction Model</h1>
+         </div>
+
+        <!-- use card class -->
+        <div class="card">
+            <div class="card-body"><b>Overview: </b><p> During my Senior year I combined my love for Basketball and Data Science to build
+                a machine learning model to predict the winner of NBA basketball games. I coded the project in Python
+                and used a number of Python packages including Pandas, NumPy, and Sklearn to store and model my data. </p></div>
+
+            </div>
+            <!-- <div class="card-body"><b>Bio: </b><p> Bachelor's in Science undergrad student at the University of Colorado at Boulder.</p></div> -->
+
+            <!-- </div> -->
+        <!-- </div> -->
+        <br>
+        <h3>Project Outline</h3>
+
+        <!-- bordered table -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Phase</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Technologies Used</th>
+                    <th scope="col">Images</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <th scope="row">Data Collection</th>
+                        <td>The data I used for this was the 'Human Disease Network': a network of all known genetic disorders and associated genes
+                        developed by OMIM. I imported the network into Cytoscape, converted it into GraphML file, and loaded into Python
+                        as a bipartite NetworkX graph. </td>
+                        <td>Python, NetworkX, Pandas, NumPy, Matplotlib, Cytoscape</td>
+                        <td><img src="./Screenshot_stats.png"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Constructing Graphs</th>
+                        <td>After importing the netowork into Python, I constructed two single mode representations of the graph; the
+                        HDN and GDN. For the HDN, nodes were all genetic disorders, and two disorders are linked if they share a gene
+                        whose mutation is implicated in both disorders. In the GDN, Genes are the nodes and two genes are linked
+                        if their mutations are implicated in a shared disorder.</td>
+                        <td>Python, NetworkX, NumPy</td>
+                        <td><img src="Screenshot_stats.png"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Link Prediction Evaluation</th>
+                        <td>Once all of the graphs were constructed, I wanted to analyze the graph structure and determine how accurately
+                        missing links in the network could be predicted. To do this I reconstructed each graph while excluding various proportions of
+                        known links. I then ran three link prediction algorithms to determine the most likely missing links. The three
+                        algorithms included a Jaccard predictor, degree product predictor, and a random baseline predictor. After several test
+                        I found that the Jaccard predictor was able to find missing links the most accurately, yielding an AUC score
+                        of 0.947. </td>
+                        <td>Python, NetworkX, NumPy</td>
+                        <td><img src="Screenshot_data.png"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Results</th>
+                        <td>After proving that missing links could be predicted well using my Jaccard predictor, I was able to
+                        conclude that there was high clustering in the orignial network, and that 'bridge' nodes were most likely
+                        to have missing links in the network. A bridge node is classified as a disorder or gene that has links to nodes
+                        in multiple disorder classes.</td>
+                        <td>Python, NetworkX, NumPy</td>
+                        <td><img src="Screenshot_graph.png"></td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+        <hr>
+        </div>
+
+
+
+      </body>
+
+
+    </html>
