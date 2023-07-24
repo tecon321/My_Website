@@ -21,6 +21,26 @@
                   border-style:inset !important;
                   border-width:10px !important;
               }
+
+              .scrolling-wrapper {
+                  overflow-x: scroll;
+                  overflow-y: hidden;
+                  white-space: nowrap;
+
+                  .card {
+                    display: inline-block;
+                  }
+                }
+
+                .scrolling-wrapper-flexbox {
+                  display: flex;
+                  flex-wrap: nowrap;
+                  overflow-x: auto;
+
+                  .card {
+                    flex: 0 0 auto;
+                  }
+                }
           </style>
 
       </head>
@@ -72,6 +92,14 @@
 
             <!-- </div> -->
             <!-- <div class="col-md-6"> -->
+
+            <!-- <div class="row">
+            <div class="col"> -->
+                <img src="./profpic11.PNG" class="rounded-circle" height="220" width="200" alt="Picture of Ted Conklin">
+            <!-- </div> -->
+            <br>
+            <br>
+            <!-- <div class="col"> -->
                 <div class="card">
                     <div class="card-body"><b>Bio: </b><p> I am a graduate from the University of Colorado at Boulder where I earned a
                         Bachelor of Science degree in computer science in 2023. I found my passion for computer science because
@@ -79,16 +107,22 @@
                         During my time at CU Boulder I as able to explore all areas of computer science, with an emphasis in Software Development and
                         Data Science. On this site you can explore some of my most notable projects, and see my journey and growth as Computer Scientist.
                         </p></div>
+                    </div>
+                <!-- </div> -->
                 <!-- </div> -->
 
             <!-- </div> -->
-        </div>
+        <!-- </div> -->
             <!-- <div class="card-body"><b>Bio: </b><p> Bachelor's in Science undergrad student at the University of Colorado at Boulder.</p></div> -->
 
             </div>
         </div>
         <br>
+
         <div class="container">
+
+
+        <br>
         <h2>Professional Pages</h2>
         <!-- link to github -->
         <a href="https://github.com/tecon321" class="btn btn-outline-secondary">GitHub</a>
@@ -97,13 +131,103 @@
         <hr>
         <!-- add image of me -->
 
-        <img src="./profpic11.PNG" class="rounded-circle" height="220" width="200" alt="Picture of Ted Conklin">
+        <!-- <img src="./profpic11.PNG" class="rounded-circle" height="220" width="200" alt="Picture of Ted Conklin"> -->
         <br>
         <br>
         <h3>My Projects</h3>
 
+        <!-- <div class="container"> -->
+        <div class="scrolling-wrapper-flexbox">
+            <!-- <div class="row"> -->
+                <div class="card mt-3" id="project1" style="width: 14rem;">
+                    <img class="card-img-top" src="./medtronic_logo.jpg" alt="sports picture" height="120px" width="150px">
+                    <div class="card-body">
+                        <center><b class="card-title">Medtronic Touch Surgery App Expansion</b>
+                        <p class="card-text">SwiftUI, SQL, Firebase, Figma, Confluence, Jira, Agile Project Management </p>
+
+                        <button type="button" class="btn btn-info" id="plus1" onclick="expand1()">More Info</button>
+                    </center>
+
+                    </div>
+                </div>
+
+                <div class="card mt-3" id="project2" style="width: 14rem;">
+                    <img class="card-img-top" src="./genes.jpg" alt="languages picture" height="120px" width="150px">
+                    <div class="card-body">
+                        <center><b class="card-title">Human Gene Disease Network Analysis</b>
+                        <p class="card-text">Python, NetworkX, NumPy, Cytoscape, XML, Jupyter</p>
+                        <button type="button" class="btn btn-info" id="plus2" onclick="expand2()">More Info</button>
+                    </center>
+
+                    </div>
+                </div>
+
+                <div class="card mt-3" id="project3" style="width: 14rem;">
+                    <img class="card-img-top" src="./nba_logo.jpg" alt="cooking picture" height="120px" width="150px">
+                    <div class="card-body">
+                        <center>
+                        <b class="card-title">NBA Prediction Model</b>
+                        <p class="card-text">Python, NumPy, Pandas, BeatifulSoup, Decision Trees, Bagging Ensable
+                        AdaBoost, Random Forest, Scikit-learn, Excel, Matplotlib</p>
+                        <!-- <button type="button" class="btn btn-info" id="plus3" onclick="expand3()">More Info</button> -->
+                        <a href="./nba_model.html" class="btn btn-info">More Info</a>
+                    </center>
+
+                    </div>
+                </div>
+
+                <div class="card mt-3" id="project4" style="width: 14rem;">
+                    <img class="card-img-top" src="./bj_pic.jpg" alt="cooking picture" height="120px" width="150px">
+                    <div class="card-body">
+                        <center>
+                        <b class="card-title">Virtual Blackjack</b>
+                        <p class="card-text">Java, Javascript, HTML, CSS, C++, SQL, Object Oriented Programming, Node JS, Phaser</p>
+                        <button type="button" class="btn btn-info" id="plus3" onclick="expand3()">More Info</button>
+                    </center>
+
+                    </div>
+                </div>
+
+                <div class="card mt-3" id="project5" style="width: 14rem;">
+                    <img class="card-img-top" src="./cooking.jpg" alt="cooking picture" height="120px" width="150px">
+                    <div class="card-body">
+                        <center>
+                        <b class="card-title">Digital Portfolio</b>
+                        <p class="card-text">HTML, Javascript, CSS, GitHub Pages</p>
+                        <button type="button" class="btn btn-info" id="plus3" onclick="expand3()">More Info</button>
+                    </center>
+
+                    </div>
+                </div>
+
+                <div class="card mt-3" id="project6" style="width: 14rem;">
+                    <img class="card-img-top" src="./ttt_pic.jpg" alt="cooking picture" height="120px" width="150px">
+                    <div class="card-body">
+                        <center>
+                        <b class="card-title">Tic-Tac-Toe</b>
+                        <p class="card-text">HTML, Javascript, CSS</p>
+                        <button type="button" class="btn btn-info" id="plus3" onclick="expand3()">More Info</button>
+                    </center>
+
+                    </div>
+                </div>
+
+                <div class="card mt-3" id="project5" style="width: 14rem;">
+                    <img class="card-img-top" src="./got_pic.jpg" alt="cooking picture" height="120px" width="150px">
+                    <div class="card-body">
+                        <center>
+                        <b class="card-title">Game of Thrones Game</b>
+                        <p class="card-text">C++, shell, Atom</p>
+                        <button type="button" class="btn btn-info" id="plus3" onclick="expand3()">More Info</button>
+                    </center>
+
+                    </div>
+                </div>
+            <!-- </div> -->  <!--end row -->
+        </div>
+    <!-- </div> -->
         <!-- bordered table -->
-        <table class="table table-bordered">
+        <!-- <table class="table table-bordered">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -133,7 +257,7 @@
                     </tr>
                 </tbody>
             </thead>
-        </table>
+        </table> -->
         <hr>
 
         <div class="row">
